@@ -1,0 +1,59 @@
+/* global palette */
+
+:root {
+    --primary-btn: webkit-linear-gradient(toright, #00cfff, #b300ff);
+    /* --secondary-btn:  */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    
+header {
+    position: fixed;
+    /* box-sizing: border-box; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 1rem; */
+    height: 5rem;
+    padding: 0 2rem;
+    background: rgba(20, 20, 30, 0.7);
+    border: 1px solid rgba(0, 207, 255, 0.2);
+    color: #ffffff;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+header a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header li {
+    list-style: none;
+}
+header li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+#hero-section {
+    height: 100vh;
+    /* padding: 5rem 10rem; */
+    background: url('../assets/images/hero-img.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
