@@ -4,15 +4,17 @@
     /* color palette */
     --primary-color: #b300ff;
     --secondary-color: #00cfff;
+    --oklab-primary-color: color-mix(in oklab, #b300ff 90%, white);
+    --oklab-secondary-color: color-mix(in oklab, #00cfff 90%, white);
 
     /* text colors */
     --text-title-color: white;
     --text-color: color-mix(in oklab, white 60%, transparent);
-    --trion-colors: linear-gradient(to right, var(--secondary-color), var(--primary-color), var(--secondary-color));
+    --trion-colors: linear-gradient(to right, var(--oklab-secondary-color), var(--oklab-primary-color), var(--oklab-secondary-color));
 
     /* bg colors */
     --bg-color: #0d0d0d;
-    --header-bg-color: rgba(20, 20, 30, 0.7);
+    --header-bg-color: #14141eb3;
     --cards-bg-color: #14141eb3;
 
     /* border and glow colors */
@@ -21,7 +23,7 @@
     --title-glow: 0 0 10px #00cfffcc, 0 0 20px #00cfff80, 0 0 30px #00cfff4d;
 
     /* button colors */
-    --primary-btn-color: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    --primary-btn-color: linear-gradient(to right, var(--oklab-secondary-color), var(--oklab-primary-color));
     --secondary-btn-color: var(--secondary-color);
 
     /* sizes */
@@ -86,6 +88,9 @@ header {
 header a {
     text-decoration: none;
     color: var(--text-title-color);
+}
+
+header ul a {
     font-weight: bold;
 }
 
@@ -104,6 +109,7 @@ header ul {
 
 header h2 {
     text-shadow: var(--title-glow);
+    font-weight: inherit;
 }
 
 /* buttons */
@@ -235,7 +241,7 @@ header h2 {
     color: var(--secondary-color);
 }
 
-.cta-section__card h2 {
+.text--gradient3c {
     background: var(--trion-colors);
     background-clip: text;
     color: transparent;
@@ -423,4 +429,125 @@ body, header, main, footer {
     body {
         overflow-x: scroll;
     }
+}
+
+/* ############################################# Tournaments */
+/* temporary */
+main {
+    overflow-y: hidden;
+}
+
+.hero-section--tournaments {
+    min-height: 50vh !important;
+    overflow: hidden;
+}
+
+#tournaments-section, #teams-section {
+    display: flex;
+    flex-direction: column;
+    padding: var(--rem4-8);
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--def-gap);
+}
+
+.container__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--def-gap);
+    flex-wrap: wrap;
+    font-size: var(--def-font-size);
+    /* font-weight: inherit; */
+    width: 100%;
+}
+
+.container__top h2 {
+    font-weight: inherit;
+}
+
+.container__top p {
+    max-width: 64rem;
+    text-align: center;
+}
+
+.tournaments__cards {
+    display: flex;
+    gap: var(--def-gap);
+    flex-wrap: wrap;
+    justify-content: center;
+    /* margin-top: var(--def-gap); */
+    font-size: var(--def-font-size);
+}
+
+.tournaments__cards .card {
+    position: relative;
+    background-color: var(--cards-bg-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 29rem;
+    height: 41.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    /* gap: var(--def-gap); */
+}
+
+
+.tournaments__cards .card img {
+    width: 29.1rem;
+    height: 19.2rem;
+    object-fit: cover;
+    display: block;
+}
+
+.tournaments__cards .card__stats {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    width: auto;
+    padding: 0.6rem 1.2rem;
+    border-radius: calc(var(--border-radius) * 3);
+    color: var(--text-title-color);
+    opacity: 0.85;
+}
+
+.tournaments__cards .card__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+    padding: 0 var(--def-gap);
+}
+
+.tournaments__cards .card__bottom .titles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    color: var(--text-title-color);
+}
+
+.tournaments__cards .card__bottom .titles h3 {
+    font-weight: inherit;
+}
+
+.tournaments__cards .card__bottom .text--secondary {
+    color: var(--secondary-color);
+}
+
+.tournaments__cards .card__bottom .numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.tournaments__cards .card__bottom a {
+    align-self: center;
+    width: 100%;
+    box-shadow: none;
 }

@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cyberpunk E-Sports Nexus - Your Ultimate Destination for Gaming, Tournaments, and Community.">
     <link rel="stylesheet" href="./assets/style.css">
-    <!-- Schema.org markup for branding -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Cyberpunk E-Sports Nexus",
-            "url": "https://sami-regragui-work.github.io/Nexus-E-Sports-Desinged"
-        }
-    </script>
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/70250cbaf5.js" crossorigin="anonymous"></script>
     <title>Home - Landing page</title>
@@ -39,24 +30,95 @@
         </div>
     </header>
     <main>
-        <section id="hero-section">
-            <div class="hero-section__text">
-                <h1 class="text--gradient2c">Enter the Future of Competitive Gaming</h1>
-                <p>Join global tournaments, discover elite teams, and dominate the leaderboard.</p>
-            </div>
-            <div class="hero-section__btns">
-                <a href="Join-Tournament.html" title="Join Tournament" class="btn btn--primary" aria-label="Start Competing"><i class="fa-solid fa-trophy"></i> &nbsp; Start Competing</a>
-                <!-- #############don't forget to update the link -->
-                <a href="https://www.youtube.com/watch?v=VPn9z__nzto&list=PLgEYeeCX7Fb_PuBn70O_l0v7puj3pIEEL&index=11" title="Watch Game Live in Youtube" class="btn btn--secondary" target="_blank" rel="noopener" aria-label="Watch Live"><i class="fa-solid fa-play"></i> &nbsp; Watch Live</a>
+        <section id="hero-section" class="hero-section--tournaments">
+            <div class="hero-section__text hero-section__text--tournaments">
+                <h1 class="text--gradient3c">Tournaments</h1>
+                <!-- <p>Join global tournaments, discover elite teams, and dominate the leaderboard.</p> -->
             </div>
         </section>
-        <section id="cta-section">
-            <div class="cta-section__card">
-                <div class="cta-section__card__elements">
-                    <i class="fa-solid fa-bolt"></i>
-                    <h2 class="text--gradient3c">Ready to Join the Arena?</h2>
-                    <p>Create your account today and start competing in tournaments, joining elite teams, and climbing the leaderboard.</p>
-                    <a href="SignUp.html" title="Sign Up Now" class="btn btn--primary btn--cta" aria-label="Sign Up Now">Sign Up Now</a>
+        <section id="tournaments-section">
+            <div class="container">
+                <div class="container__top">
+                    <h2 class="text--gradient2c">Upcoming Tournaments</h2>
+                    <p>Join the most competitive tournaments and showcase your skills against the best players worldwide.</p>
+                </div>
+                <div class="tournaments__cards">
+                    <div class="card">
+                        <div class="card__top">
+                            <img src="./assets/images/valorant.webp" alt="Valorant Tournament Banner">
+                            <div class="card__stats btn--primary">
+                                <p><i class="fa-solid fa-trophy"></i> &nbsp; $50,000</p>
+                            </div>
+                        </div>
+                        <div class="card__bottom">
+                            <div class="titles">
+                                <h3>Cyber Championship 2025</h3>
+                                <p class="text--secondary">Valorant</p>
+                            </div>
+                            <div class="numbers">
+                                <p><i class="fa-solid fa-calendar"></i> &nbsp; Dec 20, 2025</p>
+                                <p><i class="fa-solid fa-user-group"></i> &nbsp; 128 Teams</p>
+                            </div>
+                            <a href="Join-Tournament.html" aria-label="Join Tournament" title="Join Tournament" class="btn btn--primary">Join Now</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__top">
+                            <img src="./assets/images/lol.webp" alt="League of Legends Tournament Banner">
+                            <div class="card__stats btn--primary">
+                                <p><i class="fa-solid fa-trophy"></i> &nbsp; $100,000</p>
+                            </div>
+                        </div>
+                        <div class="card__bottom">
+                            <div class="titles">
+                                <h3>Neon League Finals</h3>
+                                <p class="text--secondary">League of Legends</p>
+                            </div>
+                            <div class="numbers">
+                                <p><i class="fa-solid fa-calendar"></i> &nbsp; Jan 15, 2026</p>
+                                <p><i class="fa-solid fa-user-group"></i> &nbsp; 64 Teams</p>
+                            </div>
+                            <a href="Join-Tournament.html" aria-label="Join Tournament" title="Join Tournament" class="btn btn--primary">Join Now</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__top">
+                            <img src="./assets/images/cs2.webp" alt="CS2 Tournament Banner">
+                            <div class="card__stats btn--primary">
+                                <p><i class="fa-solid fa-trophy"></i> &nbsp; $75,000</p>
+                            </div>
+                        </div>
+                        <div class="card__bottom">
+                            <div class="titles">
+                                <h3>Arena Masters</h3>
+                                <p class="text--secondary">CS2</p>
+                            </div>
+                            <div class="numbers">
+                                <p><i class="fa-solid fa-calendar"></i> &nbsp; Feb 5, 2026</p>
+                                <p><i class="fa-solid fa-user-group"></i> &nbsp; 96 Teams</p>
+                            </div>
+                            <a href="Join-Tournament.html" aria-label="Join Tournament" title="Join Tournament" class="btn btn--primary">Join Now</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__top">
+                            <img src="./assets/images/dota2.webp" alt="Dota 2 Tournament Banner">
+                            <div class="card__stats btn--primary">
+                                <p><i class="fa-solid fa-trophy"></i> &nbsp; $200,000</p>
+                            </div>
+                        </div>
+                        <div class="card__bottom">
+                            <div class="titles">
+                                <h3>Battle of the Ancients</h3>
+                                <p class="text--secondary">Dota 2</p>
+                            </div>
+                            <div class="numbers">
+                                <p><i class="fa-solid fa-calendar"></i> &nbsp; Mar 25, 2026</p>
+                                <p><i class="fa-solid fa-user-group"></i> &nbsp; 76 Teams</p>
+                            </div>
+                            <a href="Join-Tournament.html" aria-label="Join Tournament" title="Join Tournament" class="btn btn--primary">Join Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
