@@ -35,29 +35,35 @@
     --border-radius: 0.8rem;
     --icons-dim: calc(var(--hero-font-size)*2 - 1rem);
     --icons-font-size: calc(var(--hero-font-size) - 0.5rem);
+    --rem4-8: 4.8rem;
 
     /* font-family */
     --font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     /* to be continued */
 }
+
+/* initialize margin and padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* global font */
 html {
     font-size: var(--g-font-size);
     font-family: var(--font-family);
 }
 
+/* global color and display */
 body {
     background: var(--bg-color);
     color: var(--text-color);
     display: flex;
     flex-direction: column;
 }
-    
+
+/* header */
 header {
     position: fixed;
     /* box-sizing: border-box; */
@@ -89,6 +95,10 @@ header li {
 
 header ul {
     display: flex;
+    gap: calc(var(--def-gap) * 2);
+}
+
+.header__cta ul {
     gap: 1rem;
 }
 
@@ -98,15 +108,19 @@ header h2 {
 
 /* buttons */
 .btn {
-    display: inline-block;
+    display: inline-flex;
     font-size: var(--def-font-size);
-    padding: var(--def-btn-padding) calc(var(--def-btn-padding)*2);
+    /* padding: var(--def-btn-padding) calc(var(--def-btn-padding)*2); */
+    justify-content: center;
+    align-items: center;
+    width: 18rem;
+    height: 4.8rem;
     border: 1px solid var(--text-title-color);
     border-radius: var(--border-radius);
     cursor: pointer;
     text-decoration: none;
     color: var(--text-title-color);
-    /* font-weight: bold; */
+    font-weight: bold;
 }
 
 .btn--primary {
@@ -124,13 +138,13 @@ header h2 {
 /* end of global buttons */
 /* header buttons */
 .btn--header {
-    padding: calc(var(--def-btn-padding) - 0.3rem);
+    width: auto;
+    padding: 0 1.6rem;
 }
 
 /* end of buttons */
 
 /* hero section */
-
 
 #hero-section {
     min-height: 100vh;
@@ -143,6 +157,7 @@ header h2 {
     align-items: center;
     justify-content: center;
     gap: var(--hero-gap);
+    padding-bottom: var(--def-gap);
     /* justify-content: center; */
     
 }
@@ -182,20 +197,64 @@ header h2 {
     align-items: center;
 }
 
-footer {
-    display: block;
-    position: relative;
-    /* display: flex; */
-    /* align-self: flex-end; */
+/* cta section */
 
+#cta-section {
+    padding: var(--horizontal-padding);
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid var(--border-color);
 }
 
+.cta-section__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--rem4-8);
+    background-color: var(--cards-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: var(--def-font-size);
+}
+
+.cta-section__card__elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--def-gap);
+    flex-wrap: wrap;
+    width: 70rem;
+}
+
+.cta-section__card i {
+    font-size: var(--rem4-8);
+    color: var(--secondary-color);
+}
+
+.cta-section__card h2 {
+    background: var(--trion-colors);
+    background-clip: text;
+    color: transparent;
+    font-weight: inherit;
+    width: 100%;
+}
+
+
+
+/* footer */
+
+
 footer {
-    padding: 4.8rem 0;
+    padding: var(--rem4-8) 0;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
     font-size: var(--def-font-size);
+    position: relative;
 }
 
 footer::before {
@@ -224,6 +283,11 @@ footer a {
 footer li {
     list-style: none;
 }
+
+footer h2 {
+    font-weight: inherit;
+}
+
 footer h4 {
     color: var(--text-title-color);
     margin-top: 0.4rem;
