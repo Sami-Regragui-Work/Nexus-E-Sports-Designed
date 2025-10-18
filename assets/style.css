@@ -22,6 +22,8 @@
     --btn-glow: 0 0 10px #00cfff80, 0 0 20px #00cfff4d, 0 0 30px #00cfff33;
     --title-glow: 0 0 10px #00cfffcc, 0 0 20px #00cfff80, 0 0 30px #00cfff4d;
     --rank-glow: 0 0 10px #b300ff80, 0 0 20px #b300ff4d, 0 0 30px #b300ff33;
+    --transition-glow: var(--title-glow);
+    --onTop-shadow: linear-gradient(to top, var(--bg-color) 0%, var(--bg-color) 30%, transparent 100%);
 
     /* button colors */
     --primary-btn-color: linear-gradient(to right, var(--oklab-secondary-color), var(--oklab-primary-color));
@@ -39,6 +41,9 @@
     --icons-dim: calc(var(--hero-font-size)*2 - 1rem);
     --icons-font-size: calc(var(--hero-font-size) - 0.5rem);
     --rem4-8: 4.8rem;
+    --card-height: 41.8rem;
+    --card-widthx4: 29.15rem;
+    --card-widthx3: 39.9328rem;
 
     /* font-family */
     --font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -64,6 +69,12 @@ body {
     color: var(--text-color);
     display: flex;
     flex-direction: column;
+}
+
+/* style h3 as h4 */
+h3 {
+    font-size: 1.6rem;
+    font-weight: inherit;
 }
 
 /* header */
@@ -93,6 +104,10 @@ header a {
 
 header ul a {
     font-weight: bold;
+}
+
+header ul a:hover:not(.btn) {
+    color: var(--secondary-color);
 }
 
 header li {
@@ -128,6 +143,13 @@ header h2 {
     text-decoration: none;
     color: var(--text-title-color);
     font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    box-shadow: var(--transition-glow);
 }
 
 .btn--primary {
@@ -202,6 +224,10 @@ header h2 {
     gap: var(--def-gap);
     justify-content: center;
     align-items: center;
+}
+
+.hero-section__btns .btn i {
+    margin-top: 0.25rem;
 }
 
 /* cta section */
@@ -287,6 +313,11 @@ footer a {
     text-decoration: none;
     color: var(--text-color);
 }
+
+footer a:hover {
+    color: color-mix(in oklab, var(--text-title-color) 90%, transparent);
+}
+
 footer li {
     list-style: none;
 }
@@ -295,7 +326,7 @@ footer h2 {
     font-weight: inherit;
 }
 
-footer h4 {
+footer h3 {
     color: var(--text-title-color);
     margin-top: 0.4rem;
 }
@@ -364,6 +395,7 @@ footer h4 {
     width: calc(100% - 3.2rem*2);
     gap: calc(var(--def-gap)*15);
 }
+    
 /* .footer__middle::before {
     content: "";
     position: relative;
@@ -389,6 +421,7 @@ footer h4 {
     align-items: center;
     border: solid 1px transparent;
     border-radius: var(--border-radius);
+    margin-top: 0.2rem; /* to align with the text (0.4rem in the difference of height)*/
 }
 
 .footer__middle__col--secondary i {
@@ -399,6 +432,14 @@ footer h4 {
 .footer__middle__col--primary i {
     color: var(--primary-color);
     background-color: color-mix(in oklab, var(--primary-color) 20%, transparent);
+}
+
+.footer__middle__col--secondary a:hover {
+    color: var(--secondary-color) !important;
+}
+
+.footer__middle__col--primary a:hover {
+    color: var(--primary-color) !important;
 }
 
 .footer__bottom {
@@ -437,13 +478,14 @@ body, header, main, footer {
 main {
     overflow-y: hidden;
 }
+/* end of temporary */
 
 .hero-section--tournaments {
     min-height: 50vh !important;
     overflow: hidden;
 }
 
-#tournaments-section, #teams-section {
+#tournaments-section, #teams-section, #games-section, #blog-section {
     display: flex;
     flex-direction: column;
     padding: var(--rem4-8);
@@ -455,6 +497,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: var(--def-gap);
+    align-items: center;
 }
 
 .container__top {
@@ -465,7 +508,8 @@ main {
     flex-wrap: wrap;
     font-size: var(--def-font-size);
     /* font-weight: inherit; */
-    width: 100%;
+    width: 60vw; 
+    /* I just like it that way */
 }
 
 .container__top h2 {
@@ -493,8 +537,8 @@ main {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    width: 29.15rem;
-    height: 41.8rem;
+    width: var(--card-widthx4);
+    height: var(--card-height);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     /* gap: var(--def-gap); */
@@ -523,14 +567,14 @@ main {
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
-    /* padding: 0 var(--def-gap); */
-    padding: 2.5rem;
+    gap: var(--def-gap);
+    padding: 2.4rem;
 }
 
 .tournaments__cards .card__bottom .titles {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.4rem;
     color: var(--text-title-color);
 }
 
@@ -546,7 +590,7 @@ main {
 .tournaments__cards .card__bottom .numbers {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.8rem;
 }
 
 .tournaments__cards .card__bottom .fa-calendar {
@@ -611,4 +655,95 @@ main {
 
 .teams__cards .card__bottom .btn i {
     margin-top: 0.25rem;
+}
+
+/* ###################### Games */
+.games__cards .card--game-no-bg {
+    background-color: transparent;
+    height: 39.1328rem;
+
+}
+
+.games__cards .card__top--bg img{
+    height: 39.1328rem;
+    object-fit: fill;
+}
+
+.games__cards .card__top--bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--onTop-shadow);
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.games__cards .card__bottom--game {
+    position: absolute;
+    top: calc(var(--card-height) / 2 + 3.7322rem);
+    z-index: 3;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.games__cards .titles--game-category {
+    flex-direction: row !important;
+    align-self: flex-start !important;
+    color: var(--secondary-color) !important;
+}
+
+.games__cards .card__bottom--game h3 {
+    color: var(--text-title-color);
+}
+
+.games__cards .titles--game-category i {
+    align-content: center;
+}
+
+/* ###################### Blog */
+
+.blog__cards .card{
+    width: var(--card-widthx3);
+    height: 44.2rem;
+}
+
+.blog__cards .card img {
+    width: 39.9328rem;
+    object-fit: cover;
+}
+
+.blog__cards .card__bottom--blog {
+    align-items: flex-start;
+}
+
+.blog__cards .card__bottom--blog .titles {
+    align-self: start;
+}
+
+.blog__cards .card__bottom--blog .numbers {
+    justify-content: space-between;
+    /* flex-grow: 1; */
+    width: 100%;
+}
+
+.blog__cards .card__bottom--blog .numbers * {
+    color: var(--text-color);
+}
+
+.blog__cards .card__bottom--blog .read-more {
+    text-decoration: none;
+    color: var(--secondary-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.blog__cards .card__bottom--blog .read-more:hover {
+    color: var(--primary-color);
+    transform: scale(1.05);
 }
