@@ -839,3 +839,85 @@ main {
     width: 48%;
 }
 
+/* ###################### Join Tournament */
+
+.j-tournament-section form {
+    gap: calc(var(--def-gap) * 1.5);
+}
+
+.j-tournament-section [class$="title"] h2 {
+    font-size: var(--def-font-size);
+    color: var(--text-title-color);
+}
+
+.j-tournament-section form :not(.btn) {
+    align-items: flex-start;
+}
+
+.j-tournament-section form > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: calc(var(--def-gap) / 2);
+}
+
+.j-tournament-section form [class$="options"] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--def-gap);
+    justify-content: flex-start;
+}
+
+.j-tournament-section form .mode__options {
+    gap: calc(var(--def-gap) * 6.45);
+}
+
+.j-tournament-section form .btn {
+    margin-top: calc(var(--def-gap) * 2);
+}
+
+.j-tournament-section form input {
+    width: fit-content;
+    cursor: pointer;
+    accent-color: var(--secondary-color);
+}
+
+.j-tournament-section form label {
+    cursor: pointer;
+}
+
+.j-tournament-section form .two-elements {
+    user-select: none;
+
+}
+
+/* ########## Login  */
+
+.login-section form {
+    gap: calc(var(--def-gap) * 1.5);
+}
+
+.login-section form .btn {
+    margin-top: var(--def-gap);
+}
+
+.login-section form .remember-me {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* align-items: ; */
+    gap: 0.8rem;
+    margin-top: calc(-1 * var(--def-gap));
+}
+
+.login-section form input {
+    accent-color: var(--secondary-color);
+    width: fit-content;
+}
+
+/* ########## Sign Up  */
+
+.signup-section form .btn {
+    margin-top: calc(var(--def-gap) * 1.5);
+}
