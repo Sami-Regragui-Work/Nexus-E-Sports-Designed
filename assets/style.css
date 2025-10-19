@@ -57,6 +57,10 @@
     box-sizing: border-box;
 }
 
+button {
+    background-color: transparent;
+}
+
 /* global font */
 html {
     font-size: var(--g-font-size);
@@ -108,6 +112,12 @@ header ul a {
 
 header ul a:hover:not(.btn) {
     color: var(--secondary-color);
+    text-shadow: var(--title-glow);
+    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+}
+
+header ul a.selected {
+    text-shadow: 0 0 10px #ffffffcc, 0 0 20px #ffffff80, 0 0 30px #ffffff4d;
 }
 
 header li {
@@ -314,8 +324,12 @@ footer a {
     color: var(--text-color);
 }
 
-footer a:hover {
+footer a:not(:has(i)):hover {
     color: color-mix(in oklab, var(--text-title-color) 90%, transparent);
+}
+
+footer a:has(i):hover {
+    background-color: var(--border-color);
 }
 
 footer li {
@@ -544,6 +558,12 @@ main {
     /* gap: var(--def-gap); */
 }
 
+.tournaments__cards .card:hover {
+    box-shadow: var(--transition-glow);
+    transform: scale(1.02);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
 
 .tournaments__cards .card img {
     width: 29.15rem;
@@ -560,6 +580,7 @@ main {
     border-radius: calc(var(--border-radius) * 3);
     color: var(--text-title-color);
     opacity: 0.85;
+    pointer-events: none;
 }
 
 .tournaments__cards .card__bottom {
@@ -747,3 +768,74 @@ main {
     color: var(--primary-color);
     transform: scale(1.05);
 }
+
+/* Contact */
+
+.contact-section {
+    padding-top: 16rem !important;
+}
+
+.contact-section h1 {
+    width: auto;
+}
+
+.contact-section .cta--contact__card {
+    padding-inline: 0;
+    border-top-left-radius: 8rem;
+    border-top-right-radius: 8rem;
+}
+
+.contact-section .contact__card--form-envelope {
+    padding-inline: var(--rem4-8);
+    border-top: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.contact-section .cta--contact__card__elements {
+    width: 100%;
+    height: 100%;
+    gap: calc(var(--rem4-8) / 2);
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--def-gap);
+    align-items: center;
+    margin-top: calc(var(--rem4-8) / 2);
+}
+
+.contact-section form input, .contact-section form textarea {
+    width: 100%;
+    background-color: transparent;
+    color: var(--text-color);
+    padding: var(--def-btn-padding);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    font-size: var(--def-font-size);
+    outline: none;
+}
+
+.contact-section form input:focus-visible, .contact-section form textarea:focus-visible {
+    border-color: color-mix(in oklab, var(--primary-color) 33%, transparent);
+}
+
+.contact-section form textarea {
+    scrollbar-color: color-mix(in oklab, var(--secondary-color) 33%, transparent) var(--bg-color);
+    resize: none;
+}
+
+.contact-section form textarea:focus-visible {
+    scrollbar-color: color-mix(in oklab, var(--primary-color) 33%, transparent) var(--bg-color);
+}
+
+.contact-section form .full-name {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact-section form .full-name input {
+    width: 48%;
+}
+
